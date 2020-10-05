@@ -12,6 +12,7 @@ public class AddingMachine {
 	 * the total of the number being operated on
 	 */
 	  private int total;
+	  private String totalString;
 	  
 	  /**
 	   * creates a new AddingMachine object
@@ -19,6 +20,7 @@ public class AddingMachine {
 	   */
 	  public AddingMachine () {
 	    total = 0;  // not needed - included for clarity
+	    totalString = "0";
 	  }
 	  
 	  /**
@@ -26,7 +28,7 @@ public class AddingMachine {
 	   * @return the total
 	   */
 	  public int getTotal () {
-	    return 0;
+	    return total;
 	  }
 	  
 	  /**
@@ -34,6 +36,8 @@ public class AddingMachine {
 	   * @param value Should be an int
 	   */
 	  public void add (int value) {
+		  total = total + value;
+		  totalString = totalString + " + " + value;
 	  }
 
 	  /**
@@ -41,18 +45,21 @@ public class AddingMachine {
 	   * @param value Should be an int
 	   */
 	  public void subtract (int value) {
+		  total = total - value;
+		  totalString = totalString + " - " + value;
 	  }
 
 	  /**
 	   * outputs the total and all numbers added/subtracted so far
 	   */
 	  public String toString () {
-	    return "";
+	    return totalString;
 	  }
 
 	  /**
-	   * resets total of the adding machine to 0
+	   * resets memory
 	   */
 	  public void clear() {
+		  System.gc();
 	  }
 	}
